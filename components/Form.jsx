@@ -36,7 +36,7 @@ const form = ({ type, post, setPost, submitting, handleSubmit }) => {
           <span className="font-satoshi font-semibold text-base text-gray-700 ">
             Tag{" "}
             <span className="font-normal">
-              (#product, #idea, # webdevelopment)
+              (#product, #idea, #webdevelopment)
             </span>
           </span>
           <input
@@ -58,8 +58,12 @@ const form = ({ type, post, setPost, submitting, handleSubmit }) => {
             Cancel
           </Link>
 
-          <button type="submit" disabled={submitting} className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white ">
-            {submitting? `${type}...`: type}
+          <button
+            type="submit"
+            disabled={submitting}
+            className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white "
+          >
+            {submitting ? `${type}...` : type}
           </button>
         </div>
       </form>

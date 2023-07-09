@@ -1,4 +1,5 @@
-import Feed from '@components/Feed'
+import Feed from "@components/Feed";
+import Head from "next/head";
 
 const Home = () => {
   return (
@@ -15,6 +16,6 @@ const Home = () => {
 
       <Feed />
     </section>
-  )
-}
-export default Home
+  );
+};
+export default Home;
