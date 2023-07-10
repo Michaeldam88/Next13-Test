@@ -43,7 +43,7 @@ const Feed = () => {
       console.log("fetch api/prompt")
       const response = await fetch("/api/prompt");
       const data = await response.json();
-
+      console.log("respuesta api/prompt", data);
       setPosts(data);
     };
     fetchPosts();
