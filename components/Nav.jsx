@@ -8,7 +8,7 @@ const Nav = () => {
   const { data: session } = useSession();
 
   const [providers, setProviders] = useState(null);
-  const [toggleDropdown, settoggleDropdown] = useState(false);
+  const [toggleDropdown, setToggleDropdown] = useState(false);
 
   useEffect(() => {
     const setUpProviders = async () => {
@@ -78,21 +78,21 @@ const Nav = () => {
               height={37}
               className="rounded-full"
               alt="profile"
-              onClick={() => settoggleDropdown((prev) => !prev)}
+              onClick={() => setToggleDropdown((prev) => !prev)}
             ></Image>
             {toggleDropdown && (
               <div className="dropdown">
                 <Link
                   href="/profile"
                   className="dropdown_link"
-                  onClick={() => settoggleDropdown(false)}
+                  onClick={() => setToggleDropdown(false)}
                 >
                   My profile
                 </Link>
                 <Link
                   href="/create-prompt"
                   className="dropdown_link"
-                  onClick={() => settoggleDropdown(false)}
+                  onClick={() => setToggleDropdown(false)}
                 >
                   Create Prompt
                 </Link>
