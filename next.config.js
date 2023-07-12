@@ -14,8 +14,7 @@ const nextConfig = {
     };
     return config;
   },
-  async headers() {
-    return [
+  headers: [
       {
         source: "/api/prompt",
         headers: [
@@ -25,8 +24,7 @@ const nextConfig = {
           },
         ],
       },
-    ];
-  },
+    ]
 };
 
 module.exports = nextConfig;
