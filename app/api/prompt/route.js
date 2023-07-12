@@ -6,7 +6,7 @@ export const GET = async (request) => {
     await connectToDB();
     const prompts = await Prompt.find({}).populate("creator");
     const response = new Response(JSON.stringify(prompts), { status: 200 });
-    response.setHeader(
+    response.headers.set(
       "Cache-Control",
       "no-cache, no-store, max-age=0, must-revalidate"
     );
