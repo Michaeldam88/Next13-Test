@@ -4,10 +4,13 @@ import { connectToDB } from "@utils/database";
 export const GET = async (request) => {
   try {
     await connectToDB();
-    console.log("fetch prompts ejecutado");
     const prompts = await Prompt.find({}).populate("creator");
-
-    return new Response(JSON.stringify(prompts), { status: 200 });
+    const response = new Response(JSON.stringify(prompts), { status: 200 });
+    response.setHeader(
+      "Cache-Control",
+      "no-cache, no-store, max-age=0, must-revalidate"
+    );
+    return response;
   } catch (error) {
     return new Response("Failed to fetch all prompts", { status: 500 });
   }
