@@ -7,11 +7,6 @@ export const GET = async (request) => {
     const prompts = await Prompt.find({}).populate("creator");
     const response = new Response(JSON.stringify(prompts), {
       status: 200,
-      headers: {
-        "Cache-Control": "public, s-maxage=1",
-        "CDN-Cache-Control": "public, s-maxage=60",
-        "Vercel-CDN-Cache-Control": "public, s-maxage=3600",
-      },
     });
 
     return response;
@@ -19,3 +14,5 @@ export const GET = async (request) => {
     return new Response("Failed to fetch all prompts", { status: 500 });
   }
 };
+
+export const revalidate = 0;
